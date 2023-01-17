@@ -7,7 +7,7 @@ import java.util.Random;
 import java.util.stream.IntStream;
 
 public class Line {
-    private final List<Boolean> points = new ArrayList<>();
+    private final List<Point> points = new ArrayList<>();
     private static final Random random = new Random();
 
     public Line(Members members){
@@ -15,10 +15,10 @@ public class Line {
                 .forEach(i -> points.add(pointAdd(i)));
     }
 
-    public boolean pointAdd(int i){
-        boolean point = random.nextBoolean();
+    public Point pointAdd(int i){
+        Point.isFirst(random.nextBoolean());
         if(i > 0){
-            point = pointEqual(i);
+            point = validPoint(point, points.get(i - 1));
         }
         return point;
     }

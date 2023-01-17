@@ -13,10 +13,13 @@ public class ResultView {
     private static final String SPACE_LINE = "     ";
     private static final String BRIDGE_LINE = "-----";
 
-    public static void resultLadder(List<Member> members, Ladder ladder){
+
+    public static void resultLadder(List<Member> members, Ladder ladder, List<String> rewards){
         resultMember(members);
         resultLadder(ladder);
+        resultReward(rewards);
     }
+
 
     private static void resultMember(List<Member> members) {
         System.out.println(members.stream()
@@ -25,8 +28,14 @@ public class ResultView {
                 .collect(Collectors.joining("")));
     }
 
-    private static String stringFormat(String name) {
-        return String.format("%5s", name);
+    private static void resultReward(List<String> rewards) {
+        System.out.println(rewards.stream()
+                .map(ResultView::stringFormat)
+                .collect(Collectors.joining("")));
+    }
+
+    private static String stringFormat(String value) {
+        return String.format("%5s", value);
     }
 
     public static void resultLadder(Ladder ladder) {

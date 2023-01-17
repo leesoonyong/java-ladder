@@ -9,7 +9,7 @@ import java.util.stream.IntStream;
 
 public class Ladder {
 
-    private List<Line> lines;
+    private final List<Line> lines;
 
     public Ladder(Members members, Height height){
         this(valueOf(members, height));
@@ -26,5 +26,12 @@ public class Ladder {
 
     public List<Line> getLines() {
         return Collections.unmodifiableList(lines);
+    }
+
+    public int LadderResult(){
+        for (Line line : lines) {
+            return lines.size();
+        }
+        return 0;
     }
 }

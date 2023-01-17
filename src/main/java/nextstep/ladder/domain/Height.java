@@ -3,7 +3,7 @@ package nextstep.ladder.domain;
 public class Height {
 
     private static final String MIN_VALUE_EXCEPTION_MESSAGE = "사다리의 최소값은 2이상이여야 합니다.";
-    private int height;
+    private final int height;
 
     public Height(int height) {
         validHeightCount(height);

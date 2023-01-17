@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 
 public class Members {
 
-    private List<Member> members;
+    private final List<Member> members;
     public Members(String members){
         this(valueOf(members));
     }
