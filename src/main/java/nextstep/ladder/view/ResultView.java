@@ -47,13 +47,13 @@ public class ResultView {
         System.out.print(stringFormat(HEIGHT_BAR));
         StringBuilder stringBuilder = new StringBuilder();
         line.getPoints()
-                .forEach(value -> stringBuilder.append(divideValue(value))
+                .forEach(point -> stringBuilder.append(divideValue(point.move()))
                 .append(HEIGHT_BAR));
         System.out.println(stringBuilder);
     }
 
-    private static String divideValue(boolean value) {
-        if (value) {
+    private static String divideValue(Direction direction) {
+        if (direction.getPosition() == 1) {
             return BRIDGE_LINE;
         }
         return SPACE_LINE;

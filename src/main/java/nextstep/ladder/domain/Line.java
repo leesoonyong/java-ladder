@@ -11,30 +11,19 @@ public class Line {
     private static final Random random = new Random();
 
     public Line(Members members){
-        IntStream.range(0, members.getSize() - 1)
-                .forEach(i -> points.add(pointAdd(i)));
+        pointAdd(members.getSize() - 2);
     }
 
-    public Point pointAdd(int i){
-        Point.isFirst(random.nextBoolean());
-        if(i > 0){
-            point = validPoint(point, points.get(i - 1));
+    public void pointAdd(int lineCount){
+        Point point = Point.isFirst(random.nextBoolean());
+        points.add(point);
+        for (int i = 1; i < lineCount;  i++) {
+            points.add(point.next(random.nextBoolean()));
         }
-        return point;
+        points.add(point.isLast());
     }
 
-    private boolean pointEqual(int i) {
-        return validPoint(random.nextBoolean(), points.get(i - 1));
-    }
-
-    public boolean validPoint(boolean currentPoint, boolean beforePoint){
-        if(currentPoint && beforePoint){
-            return false;
-        }
-        return currentPoint;
-    }
-
-    public List<Boolean> getPoints() {
+    public List<Point> getPoints() {
         return Collections.unmodifiableList(points);
     }
 }

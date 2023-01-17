@@ -4,30 +4,32 @@ public class Point {
     private final boolean right;
     private final boolean left;
 
-    public Point(boolean right, boolean left) {
-        validPoint(right, left);
-        this.right = right;
+    public Point(boolean left, boolean right) {
+        validPoint(left, right);
         this.left = left;
+        this.right = right;
     }
 
-    public Point isFirst(boolean left){
-        return new Point(false, left);
+    public static Point isFirst(boolean right){
+        return new Point(false, right);
     }
 
-    public Point isLast(boolean right){
-        return new Point(right, false);
+    public Point isLast(){
+        return new Point(false, this.right);
     }
 
     public Point next(boolean right){
-        return new Point(right, this.left);
+        if(this.right){
+           return new Point(true, false);
+        }
+        return new Point(false, right);
     }
 
-
     public Direction move(){
-        if(this.right){
+        if(right){
             return Direction.RIGHT;
         }
-        if(this.left){
+        if(left){
             return Direction.LEFT;
         }
         return Direction.PASS;
