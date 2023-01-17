@@ -10,6 +10,7 @@ import java.util.stream.IntStream;
 public class Ladder {
 
     private final List<Line> lines;
+    private int position;
 
     public Ladder(Members members, Height height){
         this(valueOf(members, height));
@@ -28,10 +29,11 @@ public class Ladder {
         return Collections.unmodifiableList(lines);
     }
 
-    public int LadderResult(){
-        for (Line line : lines) {
-            return lines.size();
-        }
-        return 0;
+    public ladderResult(int memberPosition){
+
     }
+
+    public int positionAdd(Direction direction){
+
+    };
 }

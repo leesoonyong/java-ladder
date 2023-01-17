@@ -6,13 +6,13 @@ public enum Direction {
     LEFT(-1),
     RIGHT(1);
 
-    private int position;
+    private int positionCount;
 
-    Direction(int position) {
-        this.position = position;
+    Direction(int positionCount) {
+        this.positionCount = positionCount;
     }
 
-    public int getPosition() {
-        return position;
+    public int getPositionCount() {
+        return positionCount;
     }
 }

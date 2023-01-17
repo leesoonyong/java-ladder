@@ -53,7 +53,7 @@ public class ResultView {
     }
 
     private static String divideValue(Direction direction) {
-        if (direction.getPosition() == 1) {
+        if (direction.equals(Direction.RIGHT)) {
             return BRIDGE_LINE;
         }
         return SPACE_LINE;
