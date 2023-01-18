@@ -27,9 +27,7 @@ public class Line {
         return Collections.unmodifiableList(points);
     }
 
-    public int move() {
-        return points.stream()
-                .mapToInt(Point::move)
-                .sum();
+    public int move(int memberPosition) {
+        return points.get(memberPosition).move();
     }
 }

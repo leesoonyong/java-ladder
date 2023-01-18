@@ -23,6 +23,10 @@ public class Rewards {
                 .collect(Collectors.toList());
     }
 
+    public int findResultIndex(String reward){
+        return rewards.indexOf(reward);
+    }
+
     public List<String> getRewards() {
         return Collections.unmodifiableList(rewards);
     }
