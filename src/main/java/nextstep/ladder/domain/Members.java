@@ -23,6 +23,9 @@ public class Members {
                 .collect(Collectors.toList());
     }
 
+    public int findMemberIndex(String member){
+        return members.indexOf(member);
+    }
     public List<Member> getMembers() {
         return Collections.unmodifiableList(members);
     }

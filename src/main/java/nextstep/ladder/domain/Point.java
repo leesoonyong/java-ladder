@@ -25,14 +25,14 @@ public class Point {
         return new Point(false, right);
     }
 
-    public Direction move(){
+    public int move(){
         if(right){
-            return Direction.RIGHT;
+            return Direction.RIGHT.getPositionCount();
         }
         if(left){
-            return Direction.LEFT;
+            return Direction.LEFT.getPositionCount();
         }
-        return Direction.PASS;
+        return Direction.PASS.getPositionCount();
     }
 
     private void validPoint(boolean right, boolean left) {

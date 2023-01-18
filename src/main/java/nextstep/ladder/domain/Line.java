@@ -26,4 +26,10 @@ public class Line {
     public List<Point> getPoints() {
         return Collections.unmodifiableList(points);
     }
+
+    public int move() {
+        return points.stream()
+                .mapToInt(Point::move)
+                .sum();
+    }
 }

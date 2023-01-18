@@ -10,8 +10,8 @@ public class Rewards {
 
     private final List<String> rewards;
 
-    public Rewards(String rewards) {
-        this(valueOf(rewards));
+    public Rewards(String rewards){
+            this(valueOf(rewards));
     }
 
     public Rewards(List<String> rewards) {
