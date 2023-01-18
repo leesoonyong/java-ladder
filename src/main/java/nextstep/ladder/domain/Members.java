@@ -24,8 +24,16 @@ public class Members {
     }
 
     public int findMemberIndex(String member){
+        validMemberCheck(member);
         return members.indexOf(member);
     }
+
+    public void validMemberCheck(String member){
+        if(!members.contains(member)){
+            throw new IllegalArgumentException("해당 이름을 가진 사람이 존재하지 않습니다.");
+        }
+    }
+
     public List<Member> getMembers() {
         return Collections.unmodifiableList(members);
     }

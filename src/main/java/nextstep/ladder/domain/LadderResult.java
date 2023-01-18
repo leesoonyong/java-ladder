@@ -4,10 +4,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class LadderResult {
-    private Map<Integer, Integer> resultMap = new HashMap<>();
+    private Map<Integer, String> resultMap = new HashMap<>();
 
-    private void result(int memberPostion, int ladderResult){
-            resultMap.put(memberPostion, ladderResult);
-    };
-
+    public LadderResult(int memberPosition, String result) {
+        resultMap.put(memberPosition, result);
+    }
 }

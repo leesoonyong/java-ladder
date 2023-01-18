@@ -28,7 +28,7 @@ public class Ladder {
         return Collections.unmodifiableList(lines);
     }
 
-    private int moveLine(int memberPosition){
+    public int moveLine(int memberPosition){
         return lines.stream()
                 .mapToInt(line -> line.move(memberPosition))
                 .sum();

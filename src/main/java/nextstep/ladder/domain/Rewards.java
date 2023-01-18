@@ -23,8 +23,8 @@ public class Rewards {
                 .collect(Collectors.toList());
     }
 
-    public int findResultIndex(String reward){
-        return rewards.indexOf(reward);
+    public String findResultIndex(int reward){
+        return rewards.get(reward);
     }
 
     public List<String> getRewards() {

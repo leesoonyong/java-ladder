@@ -13,5 +13,13 @@ public class LadderApplication {
         Ladder ladder = new Ladder(members, height);
 
         resultLadder(members.getMembers(), ladder, ladderReward.getRewards());
+
+        int memberIndex = members.findMemberIndex(inputMemberValue());
+        int resultValue = ladder.moveLine(memberIndex);
+        String result = ladderReward.findResultIndex(resultValue);
+
+        LadderResult ladderResult = new LadderResult(memberIndex, result);
+
+
     }
 }
