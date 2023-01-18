@@ -23,7 +23,7 @@ public class Rewards {
                 .collect(Collectors.toList());
     }
 
-    public String findResultIndex(int reward){
+    public String getResult(int reward){
         return rewards.get(reward);
     }
 

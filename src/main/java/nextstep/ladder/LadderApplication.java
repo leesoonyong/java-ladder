@@ -16,7 +16,7 @@ public class LadderApplication {
 
         int memberIndex = members.findMemberIndex(inputMemberValue());
         int resultValue = ladder.moveLine(memberIndex);
-        String result = ladderReward.findResultIndex(resultValue);
+        String result = ladderReward.getResult(resultValue);
 
         LadderResult ladderResult = new LadderResult(memberIndex, result);
 

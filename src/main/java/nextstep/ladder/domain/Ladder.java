@@ -29,8 +29,9 @@ public class Ladder {
     }
 
     public int moveLine(int memberPosition){
-        return lines.stream()
+        int positionSum = lines.stream()
                 .mapToInt(line -> line.move(memberPosition))
                 .sum();
+        return memberPosition + positionSum;
     }
 }
